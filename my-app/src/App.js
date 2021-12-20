@@ -20,18 +20,18 @@ function App({ products, cart, total }) {
             </div>
           </div>
         ) : (
-          <div></div>
+          <div>
+            {cart.map((product) => {
+              return (
+                <div key={product.name}>
+                  {product.name} X {product.qty} {product.price}
+                </div>
+              );
+            })}
+            <div>Total: ${total}</div>
+            <button>checkout</button>
+          </div>
         )}
-        <div>
-          {cart.map((product) => {
-            return (
-              <div key={product.name}>
-                {product.name} X {product.qty} {product.price}
-              </div>
-            );
-          })}
-          <div>Total: ${total}</div>
-        </div>
       </div>
     </div>
   );
