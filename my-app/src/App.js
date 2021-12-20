@@ -16,20 +16,22 @@ function App({ products, cart, total }) {
           <div>
             please add some products to cart
             <div>
-              <button disabled={true}>checkout</button>
+              <button disabled={true} className="check-out">
+                checkout
+              </button>
             </div>
           </div>
         ) : (
           <div>
             {cart.map((product) => {
               return (
-                <div key={product.name}>
+                <div key={product.name} className="product-details">
                   {product.name} X {product.qty} {product.price}
                 </div>
               );
             })}
             <div>Total: ${total}</div>
-            <button>checkout</button>
+            <button className="check-out">checkout</button>
           </div>
         )}
       </div>

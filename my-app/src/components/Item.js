@@ -27,7 +27,9 @@ const Item = ({ value, addToCart }) => {
       <div>
         {name} {price} X {amount}
       </div>
-      <button onClick={() => addToCart(id)}>add to cart</button>
+      <button className="add-to-cart" onClick={() => addToCart(id)}>
+        add to cart
+      </button>
     </div>
   );
 };
